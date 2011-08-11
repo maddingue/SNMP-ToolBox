@@ -55,8 +55,10 @@ sub find_next_oid {
     croak "error: first argument must be an arrayref"
         unless ref $oid_list eq "ARRAY";
 
+    $req_oid   ||= "";
+    $walk_base ||= "";
+
     my ($first_idx, $req_oid_idx);
-    $req_oid_idx = -2;
 
     for my $i (0 .. $#{$oid_list}) {
         # check if we are still within the given context, if given any
@@ -67,19 +69,21 @@ sub find_next_oid {
 
         # exact match of the requested entry
         if ($oid_list->[$i] eq $req_oid) {
-            $req_oid_idx = $i;
+            $req_oid_idx = $i + 1;
             last
         }
         # prefix match of the requested entry
         elsif (index($oid_list->[$i], $req_oid) == 0) {
-            $req_oid_idx = $i - 1;
+            $req_oid_idx = $i;
             last
         }
     }
 
     # get the entry following the requested one, or the first
     # from within the context
-    my $next_oid = $oid_list->[$req_oid_idx+1] || $oid_list->[$first_idx];
+    my $next_oid = defined $req_oid_idx
+                 ? $oid_list->[$req_oid_idx]
+                 : "NONE";
 
     # check that the resulting OID is still within context
     $next_oid = "NONE" if index($next_oid, $walk_base) != 0;
