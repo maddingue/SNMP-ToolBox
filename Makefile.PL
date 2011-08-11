@@ -12,6 +12,8 @@ WriteMakefile(
     PREREQ_PM => {
         # prereqs
         'Carp'              => 0,
+        'Exporter'          => 0,
+        'parent'            => 0,
 
         # build/test prereqs
         'Test::More'    => 0,

@@ -10,6 +10,8 @@ my $builder = Module::Build->new(
     dist_version_from   => 'lib/SNMP/ToolBox.pm',
     requires => {
         'Carp'              => 0,
+        'Exporter'          => 0,
+        'parent'            => 0,
     },
     build_requires => {
         'Test::More'        => 0,
