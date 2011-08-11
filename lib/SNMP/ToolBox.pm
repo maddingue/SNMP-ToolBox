@@ -127,7 +127,7 @@ Version 0.01
 =head1 DESCRIPTION
 
 This module contains a set of functions useful for writing SNMP-related
-programs and modules.
+programs and modules: C<by_oid>, C<find_next_oid()>, C<oid_encode()>.
 
 
 =head1 EXPORTS
