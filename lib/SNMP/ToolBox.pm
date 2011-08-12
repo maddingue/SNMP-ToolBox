@@ -9,7 +9,7 @@ use Carp;
 
 {
     no strict "vars";
-    $VERSION = '0.01';
+    $VERSION = '0.02';
     @EXPORT  = qw< by_oid find_next_oid oid_encode >;
 
     if ($] < 5.008) {
