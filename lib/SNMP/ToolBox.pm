@@ -9,7 +9,7 @@ use Carp;
 
 {
     no strict "vars";
-    $VERSION = '0.02';
+    $VERSION = '0.03';
     @EXPORT  = qw< by_oid find_next_oid oid_encode >;
 
     if ($] < 5.008) {
@@ -109,7 +109,7 @@ SNMP::ToolBox - Set of SNMP-related utilities
 
 =head1 VERSION
 
-Version 0.01
+Version 0.03
 
 
 =head1 SYNOPSIS
