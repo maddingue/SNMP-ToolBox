@@ -41,6 +41,9 @@ my @cases = (
     [ "called with a request within the list, with no context",
         [ $oid_list[4] ], $oid_list[5] ],
 
+    [ "called with a request just before the end of the list, with no context",
+        [ $oid_list[-2] ], $oid_list[-1] ],
+
     [ "called with a request outside the list, with no context",
         [ "$base_oid.5" ], "NONE" ],
 

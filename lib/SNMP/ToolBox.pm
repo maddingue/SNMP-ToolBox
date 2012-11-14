@@ -80,7 +80,7 @@ sub find_next_oid {
     }
 
     # get the entry following the requested one
-    my $next_oid = (defined $next_oid_idx and $next_oid_idx < $#{$oid_list})
+    my $next_oid = (defined $next_oid_idx and $next_oid_idx <= $#{$oid_list})
                  ? $oid_list->[$next_oid_idx]
                  : "NONE";
 
