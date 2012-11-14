@@ -1,5 +1,7 @@
 Revision history for SNMP-ToolBox
 
+        [BUGFIX] CPAN-RT #72315: Avoid a warning in _by_oid_classical (Elizabeth Cholet).
+
 0.02    2011.08.12
         [BUGFIX] Avoid a warning in find_next_oid().
 

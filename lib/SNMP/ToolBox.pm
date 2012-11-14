@@ -31,7 +31,7 @@ sub _by_oid_classical ($$) {
     my (undef, @b) = split /\./, $_[1];
     my $n = $#a > $#b ? $#a : $#b;
     my $v = 0;
-    $v ||= $a[$_] <=> $b[$_], $v && return $v for 0 .. $n;
+    $v ||= ($a[$_]||0) <=> ($b[$_]||0), $v && return $v for 0 .. $n;
     return $v
 }
 
